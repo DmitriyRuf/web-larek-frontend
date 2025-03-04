@@ -85,7 +85,7 @@ export class Catalog implements ICatalog {
   setProductSelected(value: Product){
   };
 
-  setProduct(value: Product){
+  updateProduct(value: Product){
   };
 
   setOrderItems(){

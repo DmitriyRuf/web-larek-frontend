@@ -11,7 +11,7 @@ export interface ICatalog {
   getBasketTotal(): OrderTotal;
 
   setProductSelected(value: Product): void;
-  setProduct(value: Product): void;
+  updateProduct(value: Product): void;
   setOrderItems(): void;
   setOrderField(partName: string, field: string, value: string): void;
 

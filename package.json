@@ -1,6 +1,6 @@
 {
-  "name": "my-webpack-project",
-  "version": "1.0.0",
+  "name": "web_laker",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -43,5 +43,7 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier ./src --write",
     "deploy": "gh-pages -d dist"
-  }
+  },
+  "keywords": [],
+  "author": ""
 }

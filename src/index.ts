@@ -77,7 +77,7 @@ events.on(SETTINGS.appEvents.eventProductSelect,(product: Product) => {
         catalog.updateProduct(product);
     })
     .catch(error => {
-        console.error(error);
+        console.log(error);
     })
     .finally ( ( ) => {
         catalogPage.viewPreloader(false);
@@ -204,7 +204,7 @@ productAPI.getProductList()
         catalog.productList = data;
     })
     .catch(error => {
-        console.error(error);
+        console.log(error);
     })
     .finally (() => {
         catalogPage.viewPreloader(false);

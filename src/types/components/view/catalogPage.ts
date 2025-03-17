@@ -8,5 +8,6 @@ export interface ICatalogPage {
     buttonBasketElement: HTMLButtonElement;
     catologElement: HTMLElement;
     wrapperElement: HTMLElement;
+    preloaderElement: HTMLElement;
     render(): HTMLElement;
   }

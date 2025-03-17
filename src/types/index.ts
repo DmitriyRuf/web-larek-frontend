@@ -2,7 +2,7 @@ import {ISettings} from "./utils/constants";
 /**
 * Базовые типы приложения
 */
-export type Payment = 'cash' | 'online';
+export type Payment = 'cash' | 'card';
 export type Category = "софт-скил" | "хард-скил" | "кнопка" | "дополнительное" | "другое" ;
 
 export type ProductId = string;

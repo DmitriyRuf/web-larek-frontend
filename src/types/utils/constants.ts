@@ -38,8 +38,11 @@ export interface ISettings {
       basketButtonSelector: string;
       basketCounterSelector: string;
       catalogSelector: string;
+      preloaderSelector: string;
       wrapperSelector: string;
       lockedClass: string;
+      viewPreloaderClass: string;
+      hidePreloaderClass: string;
     };
     /**
      * События
@@ -49,7 +52,6 @@ export interface ISettings {
         eventProductOpen: string;
         eventProductSelect: string;
         eventProductAdd: string;
-        eventProductDelete: string;
         eventBasketOpen: string;
         eventBasketDelete: string;
         eventOrderOpen: string;
@@ -70,6 +72,7 @@ export interface ISettings {
     cardCatalog:{
         templateId: string;
         selector: string;
+        className: string;
         titleSelector: string;
         priceSelector: string;
         categorySelector: string;
@@ -81,6 +84,7 @@ export interface ISettings {
     cardPreview: {
         templateId: string;
         selector: string;
+        className: string;
         titleSelector: string;
         priceSelector: string;
         buttonSelector: string;
@@ -96,6 +100,7 @@ export interface ISettings {
     cardBasket:{
         templateId: string;
         selector: string;
+        className: string;
         titleSelector: string;
         priceSelector: string;
         buttonDeleteSelector: string;
@@ -142,6 +147,12 @@ export interface ISettings {
         selector: string;
         descriptionSelector: string;
         buttonCloseSelector: string;
+        classError: string;
+        titleSelector: string;
+        textTitleSuccess: string;
+        textTitleError: string;
+        textButtonSuccess: string;
+        textButtonError: string;
         textTotal: (value: number) => string;
     };
     /**

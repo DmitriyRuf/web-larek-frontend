@@ -50,7 +50,10 @@ export const SETTINGS: ISettings = {
         basketCounterSelector: '.header__basket-counter',
         catalogSelector: '.gallery',
         wrapperSelector: '.page__wrapper',
+        preloaderSelector: '.preloader',
         lockedClass: 'page__wrapper_locked',
+        viewPreloaderClass: 'preloader_view',
+        hidePreloaderClass: 'preloader_hide',
     },
     /**
      * События
@@ -60,7 +63,6 @@ export const SETTINGS: ISettings = {
         eventProductSelect:'product:select',
         eventProductOpen: 'product:open',
         eventProductAdd: 'product:add',
-        eventProductDelete: 'product:delete',
         eventBasketOpen: 'basket:open',
         eventBasketDelete: 'basket:delete',
         eventOrderOpen: 'order:open',
@@ -81,6 +83,7 @@ export const SETTINGS: ISettings = {
     cardCatalog:{
         templateId: '#card-catalog',
         selector: '.card',
+        className: 'gallery__item',
         titleSelector: '.card__title',
         priceSelector: '.card__price',
         categorySelector: '.card__category',
@@ -92,6 +95,7 @@ export const SETTINGS: ISettings = {
     cardPreview: {
         templateId: '#card-preview',
         selector: '.card',
+        className: 'card_full',
         titleSelector: '.card__title',
         priceSelector: '.card__price',
         buttonSelector: '.card__button',
@@ -107,6 +111,7 @@ export const SETTINGS: ISettings = {
     cardBasket:{
         templateId: '#card-basket',
         selector: '.card',
+        className: 'card_compact',
         titleSelector: '.card__title',
         priceSelector: '.card__price',
         buttonDeleteSelector: '.basket__item-delete',
@@ -121,7 +126,7 @@ export const SETTINGS: ISettings = {
         cardListSelector: '.basket__list',
         buttonSelector: '.basket__button',
         priceSelector: '.basket__price',
-        textEmpty: 'В корзине пусто',
+        textEmpty: 'Пусто',
     },
     /**
      * Настройки шаблона окна заказа
@@ -153,6 +158,12 @@ export const SETTINGS: ISettings = {
         selector: '.order-success',
         descriptionSelector: '.order-success__description',
         buttonCloseSelector: '.order-success__close',
+        titleSelector: '.order-success__title',
+        classError: 'order-success__error',
+        textTitleSuccess: 'Заказ оформлен',
+        textTitleError: 'Ошибка оформления заказа',
+        textButtonSuccess: 'За новыми покупками!',
+        textButtonError: 'Попробовать оформить заново',
         textTotal: (value: number) => `Списано ${value} синапсов`,
     },
     /**

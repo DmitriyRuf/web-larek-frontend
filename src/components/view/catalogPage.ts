@@ -30,11 +30,7 @@ export class CatalogPage implements ICatalogPage {
     };
 
     set locked(locked: boolean){
-        if (locked) {
-            this.wrapperElement.classList.add(this._catalogPageSetting.lockedClass);
-        } else {
-            this.wrapperElement.classList.remove(this._catalogPageSetting.lockedClass);
-        };
+        this.wrapperElement.classList.toggle(this._catalogPageSetting.lockedClass, locked);
     };
 
     set productList(productList: HTMLElement[]){
@@ -46,11 +42,7 @@ export class CatalogPage implements ICatalogPage {
     };
 
     viewPreloader(view: boolean){
-        if (view) {
-        this.preloaderElement.classList.remove(this._catalogPageSetting.hidePreloaderClass);
-        } else {
-        this.preloaderElement.classList.add(this._catalogPageSetting.hidePreloaderClass);
-        }
+        this.preloaderElement.classList.toggle(this._catalogPageSetting.hidePreloaderClass, !view);
     };
 
     render(){

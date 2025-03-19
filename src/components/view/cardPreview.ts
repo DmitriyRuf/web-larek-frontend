@@ -32,11 +32,7 @@ export class CardPreview extends CardCatalog implements ICardPreview {
     };
 
     setButtonText(value: boolean){
-        if(value){
-            this.buttonElement.textContent = this._cardPreviewSetting.textAdd;
-        }else{
-            this.buttonElement.textContent = this._cardPreviewSetting.textDelete;
-        };
+        this.buttonElement.textContent = value ? this._cardPreviewSetting.textAdd : this._cardPreviewSetting.textDelete;
     };
 
     render(data: Product){

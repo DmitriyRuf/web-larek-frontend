@@ -36,11 +36,7 @@ export class Basket implements IBasket {
 
     set basketTotal(basketTotal: OrderTotal){
         this.basketTotalElement.textContent = SETTINGS.formatData.formatCurrency(basketTotal);
-        if(basketTotal === 0){
-            this.buttonElement.disabled = true;
-        }else{
-            this.buttonElement.disabled = false;
-        };
+        this.buttonElement.disabled = basketTotal === 0;
     };
 
     render(){

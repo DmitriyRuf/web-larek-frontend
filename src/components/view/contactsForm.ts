@@ -36,7 +36,7 @@ export class ContactsForm implements IContactsForm {
     };
 
     refresh(){ 
-        let errors: Errors = {};
+        const errors: Errors = {};
         this.renderError(errors);
         this.valid = false;
         this.contentElement.reset(); 
@@ -44,7 +44,6 @@ export class ContactsForm implements IContactsForm {
 
     renderError(errors: Errors){
         const { email, phone } = errors;
-        this.valid = !email && !phone;
         this.formErrorsElement.textContent = Object.values({email, phone}).filter(i => !!i).join('; ');
     };
 

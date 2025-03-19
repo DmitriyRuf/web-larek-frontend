@@ -54,7 +54,7 @@ export class OrderForm implements IOrderForm {
   };
     
   refresh(){
-    let errors: Errors = {};
+    const errors: Errors = {};
     this.renderError(errors);
     this.valid = false;
     this.contentElement.reset();
@@ -62,7 +62,6 @@ export class OrderForm implements IOrderForm {
 
   renderError(errors: Errors){
     const { payment, address } = errors;
-    this.valid = !address && !payment;
     this.formErrorsElement.textContent = Object.values({address, payment}).filter(i => !!i).join('; ');
   };
 

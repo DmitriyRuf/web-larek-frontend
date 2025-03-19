@@ -133,15 +133,9 @@ export class Catalog implements ICatalog {
   };
 
   checkProductInBasket(value: Product){
-    const product = this._basketList.find(product => {
+    return this._basketList.some(product => {
       return product.id === value.id
     });
-
-    if (product !== undefined) {
-      return true;
-    }else{
-      return false;
-    }
   };
 
   addBasketProduct(value: Product){

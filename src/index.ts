@@ -47,11 +47,10 @@ const successForm = new SuccessForm(successTemplate, events);
 /**Функции презентера**/
 //Получить список представлений продуктов карзины
 function getBasketList(): HTMLElement[] {
-    let index = 0;
-    return catalog.basketList.map((product) => {
+    return catalog.basketList.map((product, index) => {
         const cardBasket = new CardBasket(cardBasketTemplate, events, 
                                           { onClick: () => events.emit(SETTINGS.appEvents.eventBasketDelete, product) });
-        return cardBasket.render(product, index += 1); 
+        return cardBasket.render(product, index+1); 
     });
 };
 
@@ -137,6 +136,8 @@ events.on(SETTINGS.appEvents.eventOrderChange,(data: { partName: string, field: 
 });
 //Вывод ошибок формы заказа
 events.on(SETTINGS.appEvents.eventOrderError,(errors: Errors) => {
+    const { payment, address } = errors;
+    orderForm.valid = !payment && !address;
     orderForm.renderError(errors);
 });
 
@@ -153,6 +154,8 @@ events.on(SETTINGS.appEvents.eventContactsChange,(data: { partName: string, fiel
 });
 //Вывод ошибок формы контактов
 events.on(SETTINGS.appEvents.eventContactsError, (errors: Errors) => {
+    const { email, phone } = errors;
+    contactsForm.valid = !email && !phone;
     contactsForm.renderError(errors);
 });
 //Оформить заказ
